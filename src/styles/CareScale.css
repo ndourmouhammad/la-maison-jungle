@@ -1,0 +1,31 @@
+.lmj-care-scale {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.lmj-care-scale:hover {
+    background: rgba(46, 204, 113, 0.2);
+    transform: scale(1.05);
+}
+
+.lmj-care-scale img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.lmj-care-scale:hover img {
+    opacity: 1;
+}
+
+.lmj-care-scale span {
+    display: inline-flex;
+    align-items: center;
+}

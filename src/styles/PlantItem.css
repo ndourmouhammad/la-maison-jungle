@@ -1,14 +1,111 @@
-.lmj-plant-item-cover {
-	height: 220px;
-	width: 220px;
-	border-radius: 20px;
-}
-
 .lmj-plant-item {
-	margin: 10px;
+	margin: 16px;
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+	align-items: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	text-transform: capitalize;
+	background: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: var(--radius-lg);
+	padding: 20px;
+	box-shadow: var(--shadow-md);
+	transition: all var(--transition-normal);
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	width: 280px;
+	animation: fadeInUp 0.5s ease-out;
+}
+
+.lmj-plant-item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--gradient-green);
+	opacity: 0;
+	transition: opacity var(--transition-normal);
+	z-index: 0;
+}
+
+.lmj-plant-item:hover::before {
+	opacity: 0.05;
+}
+
+.lmj-plant-item:hover {
+	transform: translateY(-10px) scale(1.02);
+	box-shadow: var(--shadow-xl);
+}
+
+.lmj-plant-item>* {
+	position: relative;
+	z-index: 1;
+}
+
+.lmj-plant-item-cover {
+	height: 260px;
+	width: 260px;
+	border-radius: var(--radius-md);
+	object-fit: cover;
+	margin-bottom: 16px;
+	box-shadow: var(--shadow-md);
+	transition: all var(--transition-normal);
+}
+
+.lmj-plant-item:hover .lmj-plant-item-cover {
+	transform: scale(1.05);
+	box-shadow: var(--shadow-lg);
+}
+
+.lmj-plant-item>div {
+	display: flex;
+	gap: 12px;
+	margin-top: 12px;
+	align-items: center;
+}
+
+.lmj-plant-item>div>div {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 8px 12px;
+	background: rgba(46, 204, 113, 0.1);
+	border-radius: var(--radius-sm);
+	transition: all var(--transition-fast);
+}
+
+.lmj-plant-item>div>div:hover {
+	background: rgba(46, 204, 113, 0.2);
+	transform: scale(1.05);
+}
+
+.lmj-plant-item>div img {
+	width: 20px;
+	height: 20px;
+	opacity: 0.8;
+}
+
+/* Plant name styling */
+.lmj-plant-name {
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: var(--charcoal);
+	margin-top: 12px;
+	display: block;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
